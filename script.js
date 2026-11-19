@@ -70,7 +70,7 @@ async function updateUi() {
 
 
 async function init() {
-    state.stream = await navigator.mediaDevices.getUserMedia({video: true, audio: false});
+    state.stream = await navigator.mediaDevices.getUserMedia({video: {facingMode: {exact: 'environment'}}, audio: false});
     document.querySelector('#set-reference').addEventListener('click', () => setCurrentAsReference())
 
     const loop = async () => {
